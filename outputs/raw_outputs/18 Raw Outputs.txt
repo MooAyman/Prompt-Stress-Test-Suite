@@ -1,0 +1,184 @@
+1
+{
+"error_type":"upstream_timeout_and_connection_refused",
+"likely_root_cause":"The upstream backend at 10.12.4.201:8080 was unresponsive or unavailable, causing a timeout while reading the response header and a connection refused on the health check.",
+"affected_component":"api.aibooster.internal upstream backend 10.12.4.201:8080"
+}
+_____
+2
+{
+  "error_type": "Upstream timeout and connection failure",
+  "likely_root_cause": "The upstream server at 10.12.4.201:8080 timed out responding to a POST request and subsequently refused connections, leading to it being temporarily disabled.",
+  "affected_component": "Upstream server (10.12.4.201:8080)"
+}
+
+_____
+3
+{
+  "error_type": "Java OutOfMemoryError: Java heap space",
+  "likely_root_cause": "The TranscriptProcessor batch job exhausted the 4GB JVM heap while processing a large batch of 452 transcripts, causing the container to restart and the batch to fail.",
+  "affected_component": "com.vodafone.aibooster.pipeline.TranscriptProcessor"
+}
+_____
+4
+{
+  "error_type": "java.lang.OutOfMemoryError: Java heap space",
+  "likely_root_cause": "The system ran out of heap memory while processing a large batch of transcripts (batch_id=BATCH-88231 with 452 transcripts), leading to a container restart.",
+  "affected_component": "com.vodafone.aibooster.pipeline.TranscriptProcessor"
+}
+_____
+5
+{
+  "error_type": "Rate limit exceeded / HTTP 429 Too Many Requests",
+  "likely_root_cause": "Consumer key ending '...93ab' exceeded the Gold tier throttling limit of 1200 requests per 60-second window, reaching 1201 requests.",
+  "affected_component": "WSO2 API Manager throttling for API 'LogAnalysisAgent:v1'"
+}
+_____
+6
+{
+  "error_type": "HTTP 429 Too Many Requests / API Throttling",
+  "likely_root_cause": "The client (IP 10.12.7.14, consumer key ending in ...93ab) exceeded their 'Gold' tier rate limit of 1200 requests per 60-second window, triggering API gateway throttling.",
+  "affected_component": "WSO2AM (WSO2 API Manager)"
+}
+_____
+7
+{
+  "entities": [
+    {
+      "type": "name",
+      "value": "أحمد محمود",
+      "position": "العميل: مساء النور، أنا أحمد محمود، عايز أستفسر عن فاتورة الشهر ده لأنها زادت عن المعتاد."
+    },
+    {
+      "type": "phone_number",
+      "value": "01012345678",
+      "position": "العميل: أيوه، رقم هاتفي 01012345678، ورقم البطاقة الشخصية بتاعي 29501011234567 لو محتاجاه للتأكيد."
+    },
+    {
+      "type": "national_id_number",
+      "value": "29501011234567",
+      "position": "العميل: أيوه، رقم هاتفي 01012345678، ورقم البطاقة الشخصية بتاعي 29501011234567 لو محتاجاه للتأكيد."
+    },
+    {
+      "type": "name",
+      "value": "أحمد",
+      "position": "الموظف: تمام يا أستاذ أحمد، وأنا متوفر على نفس الرقم من الساعة 9 صباحًا لحد 5 مساءً لو حصل أي تأخير في الرد."
+    }
+  ]
+}
+_____
+8
+{
+  "entities": [
+    {
+      "type": "Name",
+      "value": "أحمد محمود",
+      "position": "العميل: مساء النور، أنا أحمد محمود، عايز أستفسر عن فاتورة الشهر ده لأنها زادت عن المعتاد."
+    },
+    {
+      "type": "Phone number",
+      "value": "01012345678",
+      "position": "العميل: أيوه، رقم هاتفي 01012345678، ورقم البطاقة الشخصية بتاعي 29501011234567 لو محتاجاه للتأكيد."
+    },
+    {
+      "type": "National ID number",
+      "value": "29501011234567",
+      "position": "العميل: أيوه، رقم هاتفي 01012345678، ورقم البطاقة الشخصية بتاعي 29501011234567 لو محتاجاه للتأكيد."
+    },
+    {
+      "type": "Name",
+      "value": "أحمد",
+      "position": "الموظف: تمام يا أستاذ أحمد، وأنا متوفر على نفس الرقم من الساعة 9 صباحًا لحد 5 مساءً لو حصل أي تأخير في الرد."
+    }
+  ]
+}
+_____
+9
+{"entities":[{"type":"NAME","value":"سارة عبد الرحمن","position":"العميلة: أنا سارة عبد الرحمن، عايزة أغيّر رقم الموبايل المسجل عندكم على حسابي."},{"type":"ADDRESS","value":"12 شارع الجمهورية، الإسكندرية","position":"العميلة: عنواني هو 12 شارع الجمهورية، الإسكندرية. والرقم القديم المسجل عندكم هو 01123456789، وعايزة أسجل رقم جديد بدل منه."},{"type":"PHONE_NUMBER","value":"01123456789","position":"العميلة: عنواني هو 12 شارع الجمهورية، الإسكندرية. والرقم القديم المسجل عندكم هو 01123456789، وعايزة أسجل رقم جديد بدل منه."}]}
+_____
+10
+{
+  "entities": [
+    {
+      "type": "NAME",
+      "value": "سارة عبد الرحمن",
+      "position": "أنا سارة عبد الرحمن، عايزة أغيّر رقم الموبايل المسجل عندكم على حسابي."
+    },
+    {
+      "type": "ADDRESS",
+      "value": "12 شارع الجمهورية، الإسكندرية",
+      "position": "عنواني هو 12 شارع الجمهورية، الإسكندرية. والرقم القديم المسجل عندكم هو 01123456789، وعايزة أسجل رقم جديد بدل منه."
+    },
+    {
+      "type": "PHONE_NUMBER",
+      "value": "01123456789",
+      "position": "عنواني هو 12 شارع الجمهورية، الإسكندرية. والرقم القديم المسجل عندكم هو 01123456789، وعايزة أسجل رقم جديد بدل منه."
+    }
+  ]
+}
+_____
+11
+{
+  "entities": [
+    {
+      "type": "personal_name",
+      "value": "محمد السيد",
+      "position": "المتصل: صباح النور، معايا العميل محمد السيد، رقم الحساب بتاعه 884321، ورقم قوميته 27803152201456."
+    },
+    {
+      "type": "account_number",
+      "value": "884321",
+      "position": "المتصل: صباح النور، معايا العميل محمد السيد، رقم الحساب بتاعه 884321، ورقم قوميته 27803152201456."
+    },
+    {
+      "type": "national_id_number",
+      "value": "27803152201456",
+      "position": "المتصل: صباح النور، معايا العميل محمد السيد، رقم الحساب بتاعه 884321، ورقم قوميته 27803152201456."
+    }
+  ]
+}
+_____
+12
+{
+  "entities": [
+    {
+      "type": "NAME",
+      "value": "محمد السيد",
+      "position": "معايا العميل محمد السيد، رقم الحساب بتاعه 884321، ورقم قوميته 27803152201456."
+    },
+    {
+      "type": "ACCOUNT_NUMBER",
+      "value": "884321",
+      "position": "معايا العميل محمد السيد، رقم الحساب بتاعه 884321، ورقم قوميته 27803152201456."
+    },
+    {
+      "type": "NATIONAL_ID",
+      "value": "27803152201456",
+      "position": "معايا العميل محمد السيد، رقم الحساب بتاعه 884321، ورقم قوميته 27803152201456."
+    }
+  ]
+}
+_____
+13
+I’m sorry you were charged 450 EGP instead of your usual 250 EGP plan and that your previous emails under ticket #VF-88213 have not received a response, especially after a similar issue recently.  
+To help investigate the unexplained 200 EGP difference and determine whether any adjustment is due, please reply with your Vodafone number/account ID, the billing period, and a screenshot or copy of the invoice breakdown if available.  
+Once those details are provided, the billing support team can check the charge and update you through the ticket, and you can also use the official customer care phone or chat channels for urgent follow-up if you need a faster response.
+_____
+14
+Thank you for reaching out, and I sincerely apologize for the delay in our response and the frustration caused by the unexpected 200 EGP charge on your latest bill. I understand how important it is to have clear billing and timely support, especially as a loyal customer of four years. I will locate your previous tickets and look into the specific details of this billing discrepancy so we can provide you with an explanation and discuss the next steps for your account.
+_____
+15
+I’m very sorry your fiber service has been down for three days and that two scheduled technician visits were missed without a call, especially given the impact on your work.  
+To help arrange the next appropriate step, please provide your account number, service address, and best callback number so the appointment status and available technician windows can be checked.  
+Once those details are available, the support team can advise on a confirmed time window if one is available and provide the appropriate contact or reference information for follow-up.
+_____
+16
+I am incredibly sorry for the frustration and the lost work you have experienced due to this outage and the missed technician appointments. I understand how critical a reliable connection is for your livelihood, and I want to help get this resolved as quickly as possible. To assist you immediately, please reply with your account number or service address so I can locate your ticket, check our dispatch schedule, and find the next available technician window for you.
+_____
+17
+I’m sorry you’ve been without a working SIM for 14 days and still haven’t been given tracking details or confirmation that it was sent to the right address.  
+Please reply with your account holder name, mobile number, and the shipping address you expected the SIM to be sent to so we can check the replacement status and whether tracking or an in-store pickup option is available.  
+I understand this is affecting your work and personal contacts, so we’ll focus first on confirming where the SIM is and the fastest available way to get you connected again.
+_____
+18
+I am very sorry for the frustration and disruption this delay has caused, especially with your phone service being inactive for so long. I understand how important it is to get your number working again quickly, and I want to help resolve this shipping issue for you. I will look directly into your shipment status to see if we can locate a tracking number or arrange an alternative option for you to get a replacement card.

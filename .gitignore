@@ -3,7 +3,4 @@
 __pycache__/
 *.pyc
 
-outputs/raw_outputs/*
-outputs/reports/*
-
 !.gitkeep

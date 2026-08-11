@@ -1,82 +1,125 @@
-# LLM Prompt Lab
+# Prompt Stress-Test Suite
+
+## Overview
+
+Prompt Stress-Test Suite is a prompt engineering experimentation tool developed to systematically compare different prompt strategies across multiple Large Language Models (LLMs) using real-world business tasks.
 
 ## Goal
+The goal of the Prompt Stress-Test Suite is to determine how different prompting strategies and LLMs perform across the same business tasks.
 
-Build a Prompt Engineering experimentation tool to compare different prompt variants across multiple LLMs for real business tasks.
+The evaluation focuses on three key dimensions:
 
-The project aims to evaluate:
+- Accuracy — How correctly the model handles the task requirements.
+- Cost — Estimated API cost based on input and output token usage.
+- Latency — Time required to generate the response.
 
-- Prompt quality
-- Model performance
-- Cost
-- Latency
-- Output quality
+## Experiment Design
 
-The project is designed to evolve throughout the internship, with new capabilities added each week.
+The Week 1 experiment consists of:
 
-## Features
+- 3 real-world business tasks
+- 3 prompt variants per task
+- 2 LLMs
+- 9 inputs
+- 18 total experiments
 
-### Version 1
+### Business Tasks
+1. Log Triage Summarizer
+Identifies the main error, likely root cause, and affected component from service logs.
 
-- Run a prompt on a single LLM.
-- Display the model response.
-- Save raw outputs.
+2. Arabic PII Redaction Checker
+Detects personally identifiable information in Arabic customer-service transcripts.
 
-#### Week 1
-- Support multiple business tasks.
-- Support multiple prompt variants (Zero-shot, Few-shot, Role Prompt).
-- Compare two different LLMs.
-- Measure latency.
-- Estimate token usage and cost (when available).
-- Generate Markdown reports.
-- Export scoring results.
+3. Customer Complaint Reply Drafter
+Generates professional and empathetic first-pass responses to customer complaints.
 
-## Folder Structure
+### Prompt Variants
 
-```text
-prompt_lab/
-├── .venv
-│
-├── outputs/
-│   ├── reports/
-│   └── raw_outputs/
-│
-├── .env
-├── .gitignore
-├── config.py
-├── evaluator.py
-├── llm_client.py
-├── main.py
-├── prompts.py
-├── README.md
-├── report.py
-└── requirements.txt
-```
+Each task is tested using three different prompting strategies:
+
+Zero-shot
+Few-shot
+Role prompting
+
+Each input is paired with one prompt variant, resulting in:
+
+3 Tasks × 3 Prompt Variants = 9 Inputs
+
+9 Inputs × 2 Models = 18 Experiments
+
+### Models
+
+The experiments compare:
+
+- GPT-5.5
+- Gemini 3.5 Flash
+
+Both models are evaluated using the same inputs and corresponding prompt variants.
+
+## Evaluation Methodology
+
+Each generated output is evaluated against predefined criteria specific to the task.
+
+The evaluation considers:
+
+### Accuracy
+
+Measures whether the output correctly satisfies the task requirements and remains consistent with the provided input.
+
+### Cost
+
+Estimated using the number of input and output tokens and the corresponding model pricing.
+
+### Latency
+
+Measured as the time between sending the request and receiving the model response.
+
+The final results are compared at both the task level and overall model level.
+
+## Results 
+- GPT-5.5 achieved a 2.2 percentage-point accuracy advantage, but was approximately 4.47× more expensive and 3.02× slower in this experiment.
+
+- Gemini 3.5 Flash provided the more efficient overall trade-off, achieving nearly the same accuracy while reducing cost by approximately 77.6% and latency by approximately 66.9%.
+
 ## Project Flow
 
-1- User selects a business task.  
-2- User selects a prompt variant.  
-3- The application loads the corresponding prompt.  
-4- The prompt is sent to the selected LLM.  
-5- The model returns a response.  
-6- The response is displayed.  
-7- Raw outputs are saved.  
-8- The response is evaluated.  
-9- A report is generated.  
+Business Tasks
+      ↓
+9 Predefined Inputs
+      ↓
+Prompt Templates
+      ↓
+3 Prompt Variants
+      ↓
+LLM Client
+      ↓
+GPT-5.5 / Gemini 3.5 Flash
+      ↓
+18 Model Outputs
+      ↓
+Accuracy Evaluation
+      ↓
+Cost & Latency Analysis
+      ↓
+Final Comparison Report
 
+## Key Findings
+
+The experiment showed that model selection should not be based on accuracy alone.
+
+GPT-5.5 achieved the highest accuracy, but the improvement over Gemini 3.5 Flash was relatively small. Gemini achieved substantially lower cost and latency while maintaining a high level of output quality.
+
+This demonstrates the importance of evaluating LLMs across multiple dimensions when selecting a model for a business use case.
+
+## Technologies
+- Python
+- OpenAI API
+- Google GenAI API
+- OpenPyXL
+- python-dotenv
 
 ## Future Enhancements
-
-1- Add 2 prompts for Customer Support Email Reply  
-2- Add 3 prompts for Meeting Notes Summarization  
-3- Add 3 prompts for Ticket Routing  
-then  
-system prompt  
-Interactive Mode: Allow users to provide custom inputs and test prompts manually in addition to predefined evaluation experiments.  
-Empower Ticket Routing: If the response can be sent via LLM, it should go to Customer Support Email Reply. If an employee needs to intervene, it should display the ticket details: "Category: , Priority: , Department: , Summary:" by Ticket Routing.  
-
-| Consideration     | Current Status                 | Future Enhancement                
-
-| Model Routing     | Comparing models for each task | Automatic model selection  
-| Prompt Injection  | Risk discussion                | Adding a layer of protection before implementing tools  
-| Cost Optimization | Cost comparison                | Selecting the most economical model that achieves the required quality  
+- Interactive Mode: Allow users to provide custom inputs.
+- Use model routing based on task requirements.
+- Selecting the most economical model that achieves the required quality
+- Add prompt-injection protection before introducing tool-using workflows.
