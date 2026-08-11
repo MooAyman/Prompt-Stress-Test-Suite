@@ -83,25 +83,25 @@ The final results are compared at both the task level and overall model level.
 
 ## Project Flow
 
-Business Tasks
-      ↓
-9 Predefined Inputs
-      ↓
-Prompt Templates
-      ↓
-3 Prompt Variants
-      ↓
-LLM Client
-      ↓
-GPT-5.5 / Gemini 3.5 Flash
-      ↓
-18 Model Outputs
-      ↓
-Accuracy Evaluation
-      ↓
-Cost & Latency Analysis
-      ↓
-Final Comparison Report
+Business Tasks  
+      ↓  
+9 Predefined Inputs  
+      ↓  
+Prompt Templates  
+      ↓  
+3 Prompt Variants  
+      ↓  
+LLM Client  
+      ↓  
+GPT-5.5 / Gemini 3.5 Flash  
+      ↓  
+18 Model Outputs  
+      ↓  
+Accuracy Evaluation  
+      ↓  
+Cost & Latency Analysis  
+      ↓  
+Final Comparison Report  
 
 ## Key Findings
 
